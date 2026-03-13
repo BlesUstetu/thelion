@@ -18,8 +18,6 @@ return(
     <Link to="/portfolio">Portfolio</Link>
   </nav>
   <ConnectWallet/>
- </header>
-
-)
-
-}
+  </header>
+ )
+ }
