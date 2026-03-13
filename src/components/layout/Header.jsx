@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import ConnectWallet from "../wallet/ConnectWallet"
 
 export default function Header(){
@@ -5,12 +6,10 @@ export default function Header(){
     <header className="header">
       <div className="logo">HybridDEX</div>
       <nav>
-        <a>Trade</a>
-        <a>Futures</a>
-        <a>Swap</a>
-        <a>Vault</a>
-        <a>Markets</a>
-        <a>Portfolio</a>
+        <Link to="/">Dashboard</Link>
+        <Link to="/trade">Trade</Link>
+        <Link to="/swap">Swap</Link>
+        <Link to="/vault">Vault</Link>
       </nav>
       <ConnectWallet/>
     </header>
