@@ -17,13 +17,13 @@ return(
 
 <Routes>
 
-<Route path="/" element={<Dashboard/>} />
+<Route path="/" element={<Dashboard />} />
 
-<Route path="/trade" element={<SpotTrade/>} />
+<Route path="/trade" element={<SpotTrade />} />
 
-<Route path="/swap" element={<Swap/>} />
+<Route path="/swap" element={<Swap />} />
 
-<Route path="/vault" element={<Vault/>} />
+<Route path="/vault" element={<Vault />} />
 
 </Routes>
 
