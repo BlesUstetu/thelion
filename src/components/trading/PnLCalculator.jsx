@@ -15,12 +15,12 @@ return(
 <h3>PnL Calculator</h3>
 
 <input
-placeholder="Entry Price"
+placeholder="Entry"
 onChange={(e)=>setEntry(Number(e.target.value))}
 />
 
 <input
-placeholder="Exit Price"
+placeholder="Exit"
 onChange={(e)=>setExit(Number(e.target.value))}
 />
 
@@ -29,11 +29,7 @@ placeholder="Size"
 onChange={(e)=>setSize(Number(e.target.value))}
 />
 
-<div style={{marginTop:"10px"}}>
-
-PnL: {pnl}
-
-</div>
+<div>PnL: {pnl}</div>
 
 </div>
 
