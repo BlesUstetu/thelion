@@ -1,42 +1,48 @@
+import { useEffect,useState } from "react"
+
 export default function OrderBook(){
 
-const bids=[
-{price:63990,amount:1.2},
-{price:63980,amount:0.8}
-]
+const [bids,setBids]=useState([])
+const [asks,setAsks]=useState([])
 
-const asks=[
-{price:64010,amount:0.5},
-{price:64020,amount:0.7}
-]
+useEffect(()=>{
+
+const ws=new WebSocket(
+"wss://stream.binance.com:9443/ws/btcusdt@depth"
+)
+
+ws.onmessage=(event)=>{
+
+const data=JSON.parse(event.data)
+
+setBids(data.b)
+setAsks(data.a)
+
+}
+
+},[])
 
 return(
 
-<div className="orderbook">
+<div className="panel">
 
 <h3>OrderBook</h3>
 
-{asks.map((o,i)=>(
+<div>
 
-<div key={i} className="ask">
-
-{o.price} {o.amount}
+{asks.slice(0,10).map((a,i)=>(
+<div key={i}>{a[0]} | {a[1]}</div>
+))}
 
 </div>
 
+<div>
+
+{bids.slice(0,10).map((b,i)=>(
+<div key={i}>{b[0]} | {b[1]}</div>
 ))}
-
-<hr/>
-
-{bids.map((o,i)=>(
-
-<div key={i} className="bid">
-
-{o.price} {o.amount}
 
 </div>
-
-))}
 
 </div>
 
