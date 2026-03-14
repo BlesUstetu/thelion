@@ -2,11 +2,11 @@ import { useEffect,useRef } from "react"
 
 export default function TradingChart(){
 
-const ref=useRef()
+const chartRef = useRef()
 
 useEffect(()=>{
 
-const script=document.createElement("script")
+const script = document.createElement("script")
 
 script.src="https://s3.tradingview.com/tv.js"
 
@@ -16,10 +16,12 @@ new window.TradingView.widget({
 
 symbol:"BINANCE:BTCUSDT",
 interval:"5",
-container_id:ref.current,
-theme:"dark",
+container_id:chartRef.current,
 width:"100%",
-height:500
+height:420,
+theme:"dark",
+style:"1",
+locale:"en"
 
 })
 
@@ -29,6 +31,6 @@ document.body.appendChild(script)
 
 },[])
 
-return <div ref={ref}></div>
+return <div ref={chartRef}></div>
 
 }
