@@ -6,19 +6,19 @@ const [trades,setTrades]=useState([])
 
 useEffect(()=>{
 
-const ws=new WebSocket(
+const ws = new WebSocket(
 "wss://stream.binance.com:9443/ws/btcusdt@trade"
 )
 
 ws.onmessage=(event)=>{
 
-const data=JSON.parse(event.data)
+const data = JSON.parse(event.data)
 
-setTrades(t=>[data,...t.slice(0,20)])
+setTrades((prev)=>[data,...prev.slice(0,20)])
 
 }
 
-return()=>ws.close()
+return ()=> ws.close()
 
 },[])
 
