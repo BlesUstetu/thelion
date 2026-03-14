@@ -1,4 +1,9 @@
+import { useState } from "react"
+
 export default function OrderForm(){
+
+const [price,setPrice]=useState("")
+const [amount,setAmount]=useState("")
 
 return(
 
@@ -6,20 +11,25 @@ return(
 
 <h3>Place Order</h3>
 
-<select>
+<input
+placeholder="Price"
+value={price}
+onChange={(e)=>setPrice(e.target.value)}
+/>
 
-<option>Limit</option>
-<option>Market</option>
+<input
+placeholder="Amount"
+value={amount}
+onChange={(e)=>setAmount(e.target.value)}
+/>
 
-</select>
+<button className="buy">
+Buy
+</button>
 
-<input placeholder="Price"/>
-
-<input placeholder="Amount"/>
-
-<button className="buy">Buy</button>
-
-<button className="sell">Sell</button>
+<button className="sell">
+Sell
+</button>
 
 </div>
 
