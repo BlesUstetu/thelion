@@ -1,11 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter,Routes,Route } from "react-router-dom"
 
 import Header from "./components/layout/Header"
 
 import Dashboard from "./pages/Dashboard"
-import SpotTrade from "./pages/SpotTrade"
-import Swap from "./pages/Swap"
-import Vault from "./pages/Vault"
+import Spot from "./pages/Spot"
+import Futures from "./pages/Futures"
 
 export default function App(){
 
@@ -17,13 +16,11 @@ return(
 
 <Routes>
 
-<Route path="/" element={<Dashboard/>} />
+<Route path="/" element={<Dashboard/>}/>
 
-<Route path="/trade" element={<SpotTrade/>} />
+<Route path="/spot" element={<Spot/>}/>
 
-<Route path="/swap" element={<Swap/>} />
-
-<Route path="/vault" element={<Vault/>} />
+<Route path="/futures" element={<Futures/>}/>
 
 </Routes>
 
