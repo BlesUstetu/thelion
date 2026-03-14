@@ -40,3 +40,35 @@ background:#121826;
 padding:10px;
 border-radius:10px;
 }
+
+.spot-layout{
+display:grid;
+grid-template-columns: 1fr 320px;
+grid-template-rows: 420px 260px;
+gap:10px;
+padding:10px;
+}
+
+.spot-chart{
+background:#161b22;
+padding:10px;
+border-radius:6px;
+}
+
+.spot-orderbook{
+background:#161b22;
+padding:10px;
+border-radius:6px;
+}
+
+.spot-orderform{
+background:#161b22;
+padding:10px;
+border-radius:6px;
+}
+
+.spot-trades{
+background:#161b22;
+padding:10px;
+border-radius:6px;
+}
