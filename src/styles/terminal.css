@@ -98,3 +98,11 @@ color:#ef4444;
 .panel{
 overflow:auto;
 }
+
+.terminal-pro{
+display:grid;
+grid-template-columns: 1fr 320px;
+grid-template-rows: 420px 200px 260px;
+gap:14px;
+padding:16px;
+}
