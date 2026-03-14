@@ -2,14 +2,7 @@ import { useState } from "react"
 
 export default function MarketList(){
 
-const markets=[
-"BTCUSDT",
-"ETHUSDT",
-"SOLUSDT",
-"BNBUSDT",
-"XRPUSDT",
-"ADAUSDT"
-]
+const markets=["BTCUSDT","ETHUSDT","SOLUSDT","BNBUSDT"]
 
 const [selected,setSelected]=useState("BTCUSDT")
 
@@ -22,16 +15,14 @@ return(
 {markets.map((m)=>(
 <div
 key={m}
+onClick={()=>setSelected(m)}
 style={{
-padding:"6px",
 cursor:"pointer",
+padding:"6px",
 background:selected===m?"#1f2937":"transparent"
 }}
-onClick={()=>setSelected(m)}
 >
-
 {m}
-
 </div>
 ))}
 
