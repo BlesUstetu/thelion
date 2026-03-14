@@ -9,12 +9,13 @@ return(
 <table>
 
 <thead>
+
 <tr>
 <th>Pair</th>
 <th>Entry</th>
 <th>PnL</th>
-<th>Lev</th>
 </tr>
+
 </thead>
 
 <tbody>
@@ -23,7 +24,6 @@ return(
 <td>BTCUSDT</td>
 <td>65000</td>
 <td>+120</td>
-<td>10x</td>
 </tr>
 
 </tbody>
