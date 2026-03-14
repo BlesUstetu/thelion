@@ -1,12 +1,33 @@
+import { useState } from "react"
+
 export default function Swap(){
+
+const [from,setFrom]=useState("")
+const [to,setTo]=useState("")
 
 return(
 
-<div className="page">
+<div className="panel">
 
-<h1>Swap</h1>
+<h2>DEX Swap</h2>
 
-<p>Token swap interface</p>
+<input
+placeholder="Token In"
+value={from}
+onChange={(e)=>setFrom(e.target.value)}
+/>
+
+<input
+placeholder="Token Out"
+value={to}
+onChange={(e)=>setTo(e.target.value)}
+/>
+
+<button>
+
+Swap
+
+</button>
 
 </div>
 
