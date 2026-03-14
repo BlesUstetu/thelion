@@ -1,28 +1,34 @@
-import { useEffect, useRef } from "react"
-import { createChart } from "lightweight-charts"
+import { useEffect,useRef } from "react"
 
 export default function TradingChart(){
 
-const chartRef=useRef()
+const ref=useRef()
 
 useEffect(()=>{
 
-const chart=createChart(chartRef.current,{
-height:400
+const script=document.createElement("script")
+
+script.src="https://s3.tradingview.com/tv.js"
+
+script.onload=()=>{
+
+new window.TradingView.widget({
+
+symbol:"BINANCE:BTCUSDT",
+interval:"5",
+container_id:ref.current,
+theme:"dark",
+width:"100%",
+height:500
+
 })
 
-const series=chart.addCandlestickSeries()
+}
 
-series.setData([
-{time:"2024-01-01",open:100,high:120,low:90,close:110}
-])
+document.body.appendChild(script)
 
 },[])
 
-return(
-
-<div ref={chartRef}></div>
-
-)
+return <div ref={ref}></div>
 
 }
