@@ -7,18 +7,20 @@ const [asks,setAsks]=useState([])
 
 useEffect(()=>{
 
-const ws=new WebSocket(
+const ws = new WebSocket(
 "wss://stream.binance.com:9443/ws/btcusdt@depth"
 )
 
 ws.onmessage=(event)=>{
 
-const data=JSON.parse(event.data)
+const data = JSON.parse(event.data)
 
-setBids(data.b)
-setAsks(data.a)
+setBids(data.b || [])
+setAsks(data.a || [])
 
 }
+
+return ()=> ws.close()
 
 },[])
 
@@ -30,7 +32,7 @@ return(
 
 <div>
 
-{asks.slice(0,10).map((a,i)=>(
+{asks.slice(0,8).map((a,i)=>(
 <div key={i}>{a[0]} | {a[1]}</div>
 ))}
 
@@ -38,7 +40,7 @@ return(
 
 <div>
 
-{bids.slice(0,10).map((b,i)=>(
+{bids.slice(0,8).map((b,i)=>(
 <div key={i}>{b[0]} | {b[1]}</div>
 ))}
 
