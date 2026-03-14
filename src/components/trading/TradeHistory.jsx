@@ -1,25 +1,37 @@
+import { useEffect,useState } from "react"
+
 export default function TradeHistory(){
 
-const trades=[
-{price:64000,amount:0.12},
-{price:63990,amount:0.25},
-{price:63980,amount:0.40}
-]
+const [trades,setTrades]=useState([])
+
+useEffect(()=>{
+
+const ws=new WebSocket(
+"wss://stream.binance.com:9443/ws/btcusdt@trade"
+)
+
+ws.onmessage=(event)=>{
+
+const data=JSON.parse(event.data)
+
+setTrades(t=>[data,...t.slice(0,20)])
+
+}
+
+return()=>ws.close()
+
+},[])
 
 return(
 
-<div className="trade-history">
+<div className="panel">
 
-<h3>Trade History</h3>
+<h3>Recent Trades</h3>
 
 {trades.map((t,i)=>(
-
 <div key={i}>
-
-{t.price} — {t.amount}
-
+{Number(t.p).toFixed(2)} | {t.q}
 </div>
-
 ))}
 
 </div>
