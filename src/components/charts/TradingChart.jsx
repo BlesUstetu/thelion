@@ -1,36 +1,63 @@
-import { useEffect,useRef } from "react"
+import { useEffect } from "react"
 
 export default function TradingChart(){
 
-const chartRef = useRef()
-
 useEffect(()=>{
 
-const script = document.createElement("script")
+if(!window.TradingView){
+
+const script=document.createElement("script")
 
 script.src="https://s3.tradingview.com/tv.js"
 
-script.onload=()=>{
+script.onload=loadChart
+
+document.body.appendChild(script)
+
+}else{
+
+loadChart()
+
+}
+
+function loadChart(){
 
 new window.TradingView.widget({
 
+container_id:"tv_chart",
+
 symbol:"BINANCE:BTCUSDT",
+
 interval:"5",
-container_id:chartRef.current,
-width:"100%",
-height:420,
+
 theme:"dark",
+
 style:"1",
-locale:"en"
+
+locale:"en",
+
+autosize:true,
+
+hide_side_toolbar:false,
+
+allow_symbol_change:true
 
 })
 
 }
 
-document.body.appendChild(script)
-
 },[])
 
-return <div ref={chartRef}></div>
+return(
+
+<div
+id="tv_chart"
+style={{
+height:"450px",
+width:"100%"
+}}
+/>
+
+)
 
 }
