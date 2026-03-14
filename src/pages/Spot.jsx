@@ -7,15 +7,23 @@ export default function Spot(){
 
 return(
 
-<div className="terminal">
+<div className="spot-layout">
 
+<div className="spot-chart">
 <TradingChart/>
+</div>
 
+<div className="spot-orderbook">
 <OrderBook/>
+</div>
 
+<div className="spot-orderform">
 <OrderForm/>
+</div>
 
+<div className="spot-trades">
 <TradeHistory/>
+</div>
 
 </div>
 
