@@ -8,9 +8,7 @@ return(
 
 <div className="panel">
 
-<h3>Leverage</h3>
-
-<div>{lev}x</div>
+<h3>Leverage {lev}x</h3>
 
 <input
 type="range"
