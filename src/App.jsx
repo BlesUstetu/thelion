@@ -16,11 +16,11 @@ return(
 
 <Routes>
 
-<Route path="/" element={<Dashboard/>}/>
+<Route path="/" element={<Dashboard/>} />
 
-<Route path="/spot" element={<Spot/>}/>
+<Route path="/spot" element={<Spot/>} />
 
-<Route path="/futures" element={<Futures/>}/>
+<Route path="/futures" element={<Futures/>} />
 
 </Routes>
 
