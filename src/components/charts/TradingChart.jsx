@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-export default function TradingChart(){
+export default function TradingChart({pair}){
 
 useEffect(()=>{
 
@@ -26,9 +26,9 @@ new window.TradingView.widget({
 
 container_id:"tv_chart",
 
-symbol:"BINANCE:BTCUSDT",
+symbol:`BINANCE:${pair}`,
 
-interval:"5",
+interval:"1",
 
 theme:"dark",
 
@@ -38,7 +38,9 @@ locale:"en",
 
 autosize:true,
 
-hide_side_toolbar:false,
+toolbar_bg:"#0a0f1c",
+
+enable_publishing:false,
 
 allow_symbol_change:true
 
@@ -46,17 +48,11 @@ allow_symbol_change:true
 
 }
 
-},[])
+},[pair])
 
 return(
 
-<div
-id="tv_chart"
-style={{
-height:"450px",
-width:"100%"
-}}
-/>
+<div id="tv_chart" style={{height:"520px",width:"100%"}}/>
 
 )
 
