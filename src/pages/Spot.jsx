@@ -2,7 +2,8 @@ import TradingChart from "../components/charts/TradingChart"
 import OrderBook from "../components/trading/OrderBook"
 import TradeHistory from "../components/trading/TradeHistory"
 import OrderForm from "../components/trading/OrderForm"
-import DepthHeatmap from "../components/trading/DepthHeatmap"
+import MarketSelector from "../components/trading/MarketSelector"
+import Portfolio from "../components/wallet/Portfolio"
 
 export default function Spot(){
 
@@ -11,24 +12,19 @@ return(
 <div className="terminal-pro">
 
 <div className="chart">
+
+<MarketSelector/>
 <TradingChart/>
+
 </div>
 
-<div className="orderbook">
 <OrderBook/>
-</div>
 
-<div className="heatmap">
-<DepthHeatmap/>
-</div>
-
-<div className="orderform">
 <OrderForm/>
-</div>
 
-<div className="trades">
 <TradeHistory/>
-</div>
+
+<Portfolio/>
 
 </div>
 
