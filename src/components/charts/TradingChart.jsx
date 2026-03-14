@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-export default function TradingChart({pair}){
+export default function TradingChart({pair="BTCUSDT"}) {
 
 useEffect(()=>{
 
