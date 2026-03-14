@@ -12,12 +12,14 @@ return(
 
 <p>Nilai Total Terkunci</p>
 
-<div style={{
+<div
+style={{
 display:"grid",
-gridTemplateColumns:"300px 1fr 300px",
+gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",
 gap:"20px",
 marginTop:"20px"
-}}>
+}}
+>
 
 <MarketList/>
 
