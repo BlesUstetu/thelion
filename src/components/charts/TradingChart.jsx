@@ -52,7 +52,7 @@ allow_symbol_change:true
 
 return(
 
-<div id="tv_chart" style={{height:"520px",width:"100%"}}/>
+<div id="tv_chart" style={{height:"60vh",width:"100%"}}/>
 
 )
 
