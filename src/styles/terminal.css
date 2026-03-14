@@ -48,6 +48,14 @@ gap:14px;
 padding:16px;
 }
 
+/* MOBILE */
+@media (max-width: 768px){
+.terminal{
+grid-template-columns:1fr;
+grid-template-rows:auto;
+}
+}
+
 /* BUTTON WEB3 */
 button{
 border:none;
