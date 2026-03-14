@@ -2,26 +2,31 @@ import TradingChart from "../components/charts/TradingChart"
 import OrderBook from "../components/trading/OrderBook"
 import TradeHistory from "../components/trading/TradeHistory"
 import OrderForm from "../components/trading/OrderForm"
+import DepthHeatmap from "../components/trading/DepthHeatmap"
 
 export default function Spot(){
 
 return(
 
-<div className="spot-layout">
+<div className="terminal-pro">
 
-<div className="spot-chart">
+<div className="chart">
 <TradingChart/>
 </div>
 
-<div className="spot-orderbook">
+<div className="orderbook">
 <OrderBook/>
 </div>
 
-<div className="spot-orderform">
+<div className="heatmap">
+<DepthHeatmap/>
+</div>
+
+<div className="orderform">
 <OrderForm/>
 </div>
 
-<div className="spot-trades">
+<div className="trades">
 <TradeHistory/>
 </div>
 
