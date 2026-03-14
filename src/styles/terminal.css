@@ -1,24 +1,100 @@
 body{
 margin:0;
-font-family:Arial;
-background:#0b0f1a;
+font-family:Inter,system-ui;
+background: radial-gradient(circle at top,#0f172a,#020617);
 color:white;
 }
 
+/* HEADER */
 .header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px;
-background:#121826;
+padding:16px 28px;
+background:rgba(15,23,42,0.6);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
-nav a{
-margin-right:15px;
-color:white;
+.menu a{
+margin-right:18px;
 text-decoration:none;
+color:#94a3b8;
+font-weight:500;
+transition:0.2s;
 }
 
-.page{
-padding:40px;
+.menu a:hover{
+color:#22c55e;
+}
+
+/* CARD PANEL */
+.panel{
+background:rgba(15,23,42,0.7);
+border:1px solid rgba(255,255,255,0.05);
+border-radius:12px;
+padding:14px;
+backdrop-filter:blur(6px);
+box-shadow:
+0 0 20px rgba(0,0,0,0.4);
+}
+
+/* TRADING GRID */
+.terminal{
+display:grid;
+grid-template-columns:1fr 320px;
+grid-template-rows:420px 260px;
+gap:14px;
+padding:16px;
+}
+
+/* BUTTON WEB3 */
+button{
+border:none;
+border-radius:8px;
+padding:8px 14px;
+font-weight:600;
+cursor:pointer;
+}
+
+.buy{
+background:linear-gradient(135deg,#22c55e,#4ade80);
+color:#022c22;
+}
+
+.sell{
+background:linear-gradient(135deg,#ef4444,#f87171);
+color:#1f0808;
+}
+
+/* INPUT */
+input{
+width:100%;
+margin-top:6px;
+margin-bottom:6px;
+padding:8px;
+background:#020617;
+border:1px solid rgba(255,255,255,0.1);
+border-radius:6px;
+color:white;
+}
+
+/* ORDERBOOK */
+.orderbook{
+font-size:13px;
+line-height:20px;
+}
+
+/* GREEN / RED PRICE */
+.bid{
+color:#22c55e;
+}
+
+.ask{
+color:#ef4444;
+}
+
+/* SCROLL */
+.panel{
+overflow:auto;
 }
